@@ -28,6 +28,8 @@
         <activity android:name=".activity.SelectAlbumActivity"/>
         <activity android:name=".activity.LooperActivity"/>
         <activity android:name=".activity.SelectCameraActivity"/>
+        <activity android:name=".activity.DialogThemeActivity"
+            android:theme="@style/Dialog.CustomBackgroundColor"/>
     </application>
 
 </manifest>

@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import com.example.lento.demotest.activity.ContactsActivity;
+import com.example.lento.demotest.activity.DialogThemeActivity;
 import com.example.lento.demotest.activity.LooperActivity;
 import com.example.lento.demotest.activity.SelectAlbumActivity;
 import com.example.lento.demotest.activity.SelectCameraActivity;
@@ -134,7 +135,8 @@ public class MainActivity extends AppCompatActivity implements SimpleAdapter.OnI
     }
 
     private void gotoDialogThemeActivity() {
-
+        Intent intent = new Intent(this, DialogThemeActivity.class);
+        startActivity(intent);
     }
 
     private void gotoSelectCameraActivity() {

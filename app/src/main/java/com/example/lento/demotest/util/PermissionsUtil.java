@@ -63,7 +63,7 @@ public class PermissionsUtil {
      *
      * In the fragment that requests for the permission, be sure to call
      * {@link #notifyPermissionGranted(Context, String)} when the permission is granted so that
-     * any interested listeners are notified of the change.
+     * any interested listeners are notified of the modifyBackgroundDimAmount.
      */
     public static void registerPermissionReceiver(Context context, BroadcastReceiver receiver,
                                                   String permission) {
