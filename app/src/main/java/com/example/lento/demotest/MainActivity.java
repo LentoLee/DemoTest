@@ -7,7 +7,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
+import com.example.lento.demotest.activity.BaseActivity;
 import com.example.lento.demotest.activity.ContactsActivity;
+import com.example.lento.demotest.activity.CustomViewListActivity;
 import com.example.lento.demotest.activity.DialogThemeActivity;
 import com.example.lento.demotest.activity.LooperActivity;
 import com.example.lento.demotest.activity.SelectAlbumActivity;
@@ -28,12 +30,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity implements SimpleAdapter.OnItemClickListener {
+public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemClickListener {
     private static final String TAG = "MainActivity";
     private final Map<String, Object> mViews = new HashMap<>();
     private RecyclerView mRecyclerView;
     private String[] mFuncs = new String[]{
-            "Custom View",
+            "Custom Views",
             "Contacts Permission",
             "vivo permission",
             "oppo permission",
@@ -106,6 +108,7 @@ public class MainActivity extends AppCompatActivity implements SimpleAdapter.OnI
     public void onItemClick(int pos) {
         switch (pos) {
             case 0:
+                CustomViewListActivity.start(this, CustomViewListActivity.class);
                 break;
             case 1:
                 ContactsActivity.start(this);

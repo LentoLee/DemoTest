@@ -30,6 +30,8 @@
         <activity android:name=".activity.SelectCameraActivity"/>
         <activity android:name=".activity.DialogThemeActivity"
             android:theme="@style/Dialog.CustomBackgroundColor"/>
+        <activity android:name=".activity.CustomViewListActivity"/>
+        <activity android:name=".activity.CustomViewActivity"/>
     </application>
 
 </manifest>
