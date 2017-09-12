@@ -30,6 +30,7 @@ public class ContactHelper {
 //        }
         Cursor managedCursor = context.getContentResolver().query(CallLog.Calls.CONTENT_URI, null, null, null, null);
         if (managedCursor != null) {
+            int name = managedCursor.getColumnIndex(CallLog.Calls.CACHED_NAME);
             int number = managedCursor.getColumnIndex(CallLog.Calls.NUMBER);
             int type = managedCursor.getColumnIndex(CallLog.Calls.TYPE);
             int date = managedCursor.getColumnIndex(CallLog.Calls.DATE);
@@ -38,6 +39,7 @@ public class ContactHelper {
 
             sb.append("Call Details :");
             while (managedCursor.moveToNext()) {
+                String displayName = managedCursor.getString(name);
                 String phNumber = managedCursor.getString(number);
                 String callType = managedCursor.getString(type);
                 String callDate = managedCursor.getString(date);
@@ -60,6 +62,7 @@ public class ContactHelper {
                         break;
                 }
                 sb.append("\nPhone Number:--- " + phNumber
+                        + " \nCall displayName:--- " + displayName
                         + " \nCall id:--- " + callLogId
                         + " \nCall Type:--- " + dir
                         + " \nCall Date:--- " + callDayTime

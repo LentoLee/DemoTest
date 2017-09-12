@@ -17,6 +17,7 @@ import com.example.lento.demotest.activity.SelectCameraActivity;
 import com.example.lento.demotest.adapter.SimpleAdapter;
 import com.example.lento.demotest.contact.ContactItem;
 import com.example.lento.demotest.contact.FavoriteContactLoader;
+import com.example.lento.demotest.samsungdemo.activity.CallLogsDemoActivity;
 import com.example.lento.demotest.util.SearchMatchRuleCompat;
 import com.example.lento.demotest.views.DoubleCircleView;
 import com.example.lento.demotest.views.LeafLoadingView;
@@ -43,7 +44,8 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
             "Looper",
             "应用数据访问权限",
             "select pic from Camera",
-            "dialog activity"
+            "dialog activity",
+            "sumsung demo calllog"
     };
 
     @Override
@@ -133,6 +135,10 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
                 break;
             case 8:
                 gotoDialogThemeActivity();
+                break;
+            case 9:
+                Intent intent = new Intent(MainActivity.this, CallLogsDemoActivity.class);
+                startActivity(intent);
                 break;
         }
     }
