@@ -1,5 +1,7 @@
 package com.example.lento.demotest;
 
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +14,7 @@ import com.example.lento.demotest.activity.ContactsActivity;
 import com.example.lento.demotest.activity.CustomViewListActivity;
 import com.example.lento.demotest.activity.DialogThemeActivity;
 import com.example.lento.demotest.activity.LooperActivity;
+import com.example.lento.demotest.activity.ParseHtmlActivity;
 import com.example.lento.demotest.activity.SelectAlbumActivity;
 import com.example.lento.demotest.activity.SelectCameraActivity;
 import com.example.lento.demotest.adapter.SimpleAdapter;
@@ -45,7 +48,8 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
             "应用数据访问权限",
             "select pic from Camera",
             "dialog activity",
-            "sumsung demo calllog"
+            "sumsung demo calllog",
+            "parse html"
     };
 
     @Override
@@ -140,7 +144,15 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
                 Intent intent = new Intent(MainActivity.this, CallLogsDemoActivity.class);
                 startActivity(intent);
                 break;
+            case 10:
+                gotoParseHtml();
+                break;
         }
+    }
+
+    private void gotoParseHtml() {
+        Intent intent = new Intent(this, ParseHtmlActivity.class);
+        startActivity(intent);
     }
 
     private void gotoDialogThemeActivity() {

@@ -9,8 +9,10 @@
     <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
+        android:name="com.example.lento.demotest.DemoApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -34,6 +36,7 @@
         <activity android:name=".activity.CustomViewActivity"/>
         <activity android:name="com.example.lento.demotest.samsungdemo.activity.CallLogs"/>
         <activity android:name="com.example.lento.demotest.samsungdemo.activity.CallLogsDemoActivity"/>
+        <activity android:name=".activity.ParseHtmlActivity" />
     </application>
 
 </manifest>
