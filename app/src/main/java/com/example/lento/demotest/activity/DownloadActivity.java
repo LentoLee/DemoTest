@@ -27,7 +27,8 @@ public class DownloadActivity extends BaseActivity implements View.OnClickListen
 
     private Button mDownloadBtn;
     private ProgressBar mProgressBar;
-    private static final String APK_DOWNLOAD_URL = "http://img-download.pchome.net/download/1k1/pt/4u/osvcg1-1w5l.jpg";
+//    private static final String APK_DOWNLOAD_URL = "http://img-download.pchome.net/download/1k1/pt/4u/osvcg1-1w5l.jpg";
+    private static final String APK_DOWNLOAD_URL = "https://raw.githubusercontent.com/LentoLee/DemoTest/master/app/src/main/assets/Depth.apk";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,7 +48,7 @@ public class DownloadActivity extends BaseActivity implements View.OnClickListen
     @Override
     public void onClick(View v) {
         if (mTask == null) {
-            mTask = new OkHttpSingleDownloadTask(getApkDownloadCacheDir() + File.separator + MD5Util.getMD5String(APK_DOWNLOAD_URL) + ".jpg", APK_DOWNLOAD_URL, new DownloadListener() {
+            mTask = new OkHttpSingleDownloadTask(getApkDownloadCacheDir() + File.separator + MD5Util.getMD5String(APK_DOWNLOAD_URL) + ".apk", APK_DOWNLOAD_URL, new DownloadListener() {
                 @Override
                 public void onStart() {
                     Log.d(TAG, "onStart");
@@ -64,6 +65,9 @@ public class DownloadActivity extends BaseActivity implements View.OnClickListen
                 public void onSuccess(File file) {
                     Log.d(TAG, "onSuccess : file =" + file);
                     mDownloadBtn.setClickable(true);
+                    if (mProgressBar.getProgress() != 100) {
+                        mProgressBar.setProgress(100);
+                    }
 
                 }
 
