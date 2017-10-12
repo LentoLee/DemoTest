@@ -13,6 +13,7 @@ import com.example.lento.demotest.activity.BaseActivity;
 import com.example.lento.demotest.activity.ContactsActivity;
 import com.example.lento.demotest.activity.CustomViewListActivity;
 import com.example.lento.demotest.activity.DialogThemeActivity;
+import com.example.lento.demotest.activity.DownloadActivity;
 import com.example.lento.demotest.activity.LooperActivity;
 import com.example.lento.demotest.activity.ParseHtmlActivity;
 import com.example.lento.demotest.activity.SelectAlbumActivity;
@@ -55,7 +56,8 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
             "dialog activity",
             "sumsung demo calllog",
             "parse html",
-            "install assets inner apk"
+            "install assets inner apk",
+            "download"
     };
 
     @Override
@@ -156,7 +158,15 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
             case 11:
                 installAssetsApk();
                 break;
+            case 12:
+                openDownloadPage();
+                break;
         }
+    }
+
+    private void openDownloadPage() {
+        Intent intent = new Intent(this, DownloadActivity.class);
+        startActivity(intent);
     }
 
     private boolean mIsInstall;
