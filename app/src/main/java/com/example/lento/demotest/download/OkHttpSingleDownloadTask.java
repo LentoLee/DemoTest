@@ -27,6 +27,7 @@ public class OkHttpSingleDownloadTask {
 
     private static final int ERROR_CODE_EQUEUE_FAILURE = 1001;
     private static final int ERROR_CODE_NULL_RESPONSEBODY = 1002;
+    private static final int ERROR_CODE_NEGATIVE_CONTENT_LENGTH = 1003;
 
     private String mFilePath;
     private String mDownloadUrl;
@@ -87,12 +88,16 @@ public class OkHttpSingleDownloadTask {
                 int len = 0;
                 FileOutputStream fos = null;
                 try {
-                    ResponseBody body = response.body();
+                    final ResponseBody body = response.body();
                     if (body == null) {
                         onFail(ERROR_CODE_NULL_RESPONSEBODY, "ResponseBody is null", listener);
                         return;
                     }
-                    long total = body.contentLength();
+                    final long total = body.contentLength();
+                    if (total < 0) {
+                        onFail(ERROR_CODE_NEGATIVE_CONTENT_LENGTH, "content length is negative", listener);
+                        return;
+                    }
                     long current = 0;
                     is = body.byteStream();
                     fos = new FileOutputStream(file);
