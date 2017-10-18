@@ -39,6 +39,7 @@
         <activity android:name="com.example.lento.demotest.samsungdemo.activity.CallLogsDemoActivity"/>
         <activity android:name=".activity.ParseHtmlActivity" />
         <activity android:name=".activity.DownloadActivity" />
+        <activity android:name=".activity.GalleryViewPagerActivity" />
     </application>
 
 </manifest>

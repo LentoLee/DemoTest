@@ -14,6 +14,7 @@ import com.example.lento.demotest.activity.ContactsActivity;
 import com.example.lento.demotest.activity.CustomViewListActivity;
 import com.example.lento.demotest.activity.DialogThemeActivity;
 import com.example.lento.demotest.activity.DownloadActivity;
+import com.example.lento.demotest.activity.GalleryViewPagerActivity;
 import com.example.lento.demotest.activity.LooperActivity;
 import com.example.lento.demotest.activity.ParseHtmlActivity;
 import com.example.lento.demotest.activity.SelectAlbumActivity;
@@ -22,6 +23,7 @@ import com.example.lento.demotest.adapter.SimpleAdapter;
 import com.example.lento.demotest.contact.ContactItem;
 import com.example.lento.demotest.contact.FavoriteContactLoader;
 import com.example.lento.demotest.samsungdemo.activity.CallLogsDemoActivity;
+import com.example.lento.demotest.util.MD5Util;
 import com.example.lento.demotest.util.SearchMatchRuleCompat;
 import com.example.lento.demotest.util.ThreadManager;
 import com.example.lento.demotest.views.DoubleCircleView;
@@ -35,6 +37,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -57,7 +60,8 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
             "sumsung demo calllog",
             "parse html",
             "install assets inner apk",
-            "download"
+            "download",
+            "GalleryViewPager"
     };
 
     @Override
@@ -161,7 +165,15 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
             case 12:
                 openDownloadPage();
                 break;
+            case 13:
+                openGalleryViewPagerActivity();
+                break;
         }
+    }
+
+    private void openGalleryViewPagerActivity() {
+        Intent intent = new Intent(this, GalleryViewPagerActivity.class);
+        startActivity(intent);
     }
 
     private void openDownloadPage() {
