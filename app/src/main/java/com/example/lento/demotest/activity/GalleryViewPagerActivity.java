@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -50,6 +51,14 @@ public class GalleryViewPagerActivity extends BaseActivity {
         mViewPager.setOffscreenPageLimit(2);
         mViewPager.setPageMargin(20);
         mViewPager.setPageTransformer(false, new DepthPageTransformer());
+
+        //fix only current item can scroll.
+        ((ViewGroup) mViewPager.getParent()).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return mViewPager.dispatchTouchEvent(event);
+            }
+        });
     }
 
 }
