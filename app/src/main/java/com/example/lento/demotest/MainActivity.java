@@ -15,6 +15,7 @@ import com.example.lento.demotest.activity.CustomViewListActivity;
 import com.example.lento.demotest.activity.DialogThemeActivity;
 import com.example.lento.demotest.activity.DownloadActivity;
 import com.example.lento.demotest.activity.GalleryViewPagerActivity;
+import com.example.lento.demotest.activity.LocalHtmlActivity;
 import com.example.lento.demotest.activity.LooperActivity;
 import com.example.lento.demotest.activity.ParseHtmlActivity;
 import com.example.lento.demotest.activity.SelectAlbumActivity;
@@ -61,7 +62,8 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
             "parse html",
             "install assets inner apk",
             "download",
-            "GalleryViewPager"
+            "GalleryViewPager",
+            "Local HTML"
     };
 
     @Override
@@ -168,7 +170,15 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
             case 13:
                 openGalleryViewPagerActivity();
                 break;
+            case 14:
+                openLocalHtmlPage();
+                break;
         }
+    }
+
+    private void openLocalHtmlPage() {
+        Intent intent = new Intent(this, LocalHtmlActivity.class);
+        startActivity(intent);
     }
 
     private void openGalleryViewPagerActivity() {

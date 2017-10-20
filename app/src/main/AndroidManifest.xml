@@ -40,6 +40,7 @@
         <activity android:name=".activity.ParseHtmlActivity" />
         <activity android:name=".activity.DownloadActivity" />
         <activity android:name=".activity.GalleryViewPagerActivity" />
+        <activity android:name=".activity.LocalHtmlActivity" />
     </application>
 
 </manifest>
