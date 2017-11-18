@@ -1,5 +1,6 @@
 package com.example.lento.demotest;
 
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.net.Uri;
@@ -24,7 +25,7 @@ import com.example.lento.demotest.adapter.SimpleAdapter;
 import com.example.lento.demotest.contact.ContactItem;
 import com.example.lento.demotest.contact.FavoriteContactLoader;
 import com.example.lento.demotest.samsungdemo.activity.CallLogsDemoActivity;
-import com.example.lento.demotest.util.MD5Util;
+import com.example.lento.demotest.util.FirstCharChinese;
 import com.example.lento.demotest.util.SearchMatchRuleCompat;
 import com.example.lento.demotest.util.ThreadManager;
 import com.example.lento.demotest.views.DoubleCircleView;
@@ -83,7 +84,15 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
 
 //        parseArray();
 
-        getFavorContacts();
+//        getFavorContacts();
+
+        getFirstChineseLetter();
+    }
+
+    private void getFirstChineseLetter() {
+        char firstLetter = FirstCharChinese.getFirstLetter(DemoApplication.get(), "王");
+        String s = FirstCharChinese.getAllFirstLetters(DemoApplication.get(), "水");
+        Log.d(TAG, "first  = " + firstLetter + ", s = " + s);
     }
 
     private void getFavorContacts() {
@@ -134,10 +143,16 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
                 ContactsActivity.start(this);
                 break;
             case 2:
-                gotoVivoPermission();
+//                gotoVivoPermission();
+//                gotoVivoFloatPermission();
+//                gotoVivoFingerPrint();
+                gotoS5();
                 break;
             case 3:
-                gotoOppoPermission();
+//                gotoOppoPermission();
+//                gotoMIUI89Permission();
+//                gotoOppoFingerPrint();
+                gotoS6();
                 break;
             case 4:
                 gotoSelectAlbum();
@@ -174,6 +189,49 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
                 openLocalHtmlPage();
                 break;
         }
+    }
+
+    private void gotoS6() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setComponent(new ComponentName("com.android.settings",
+                "com.android.settings.LockscreenMenuSettings"));
+        startActivity(intent);
+    }
+
+    private void gotoS5() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setComponent(new ComponentName("com.android.settings",
+                "com.android.settings.fingerprint.FingerPrintSettingsUseFingerprint"));
+        startActivity(intent);
+    }
+
+    private void gotoVivoFloatPermission() {
+        Intent intent = new Intent();
+        intent.setClassName("com.coloros.safecenter", "com.coloros.safecenter.settings.systemsecurity.SystemSecuritySettings");
+//        intent.setAction("action.coloros.safecenter.FloatWindowListActivity");
+        startActivity(intent);
+    }
+
+
+    private void gotoVivoFingerPrint() {
+        Intent intent = new Intent();
+        intent.setClassName("com.vivo.fingerprint", "com.vivo.fingerprint.FingerprintActivity");
+        startActivity(intent);
+    }
+
+    private void gotoOppoFingerPrint() {
+        Intent intent = new Intent();
+        intent.setClassName("com.android.settings", "com.oppo.settings.fingerprint.FingerprintSettings");
+        startActivity(intent);
+    }
+
+    private void gotoMIUI89Permission() {
+        Intent localIntent = new Intent("miui.intent.action.APP_PERM_EDITOR");
+        localIntent.setClassName("com.miui.securitycenter", "com.miui.permcenter.permissions.PermissionsEditorActivity");
+        localIntent.putExtra("extra_pkgname", getPackageName());
+        startActivity(localIntent);
     }
 
     private void openLocalHtmlPage() {
