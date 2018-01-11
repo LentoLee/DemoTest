@@ -28,20 +28,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ContactsActivity"/>
-        <activity android:name=".activity.SelectAlbumActivity"/>
-        <activity android:name=".activity.LooperActivity"/>
-        <activity android:name=".activity.SelectCameraActivity"/>
-        <activity android:name=".activity.DialogThemeActivity"
-            android:theme="@style/Dialog.CustomBackgroundColor"/>
-        <activity android:name=".activity.CustomViewListActivity"/>
-        <activity android:name=".activity.CustomViewActivity"/>
-        <activity android:name="com.example.lento.demotest.samsungdemo.activity.CallLogs"/>
-        <activity android:name="com.example.lento.demotest.samsungdemo.activity.CallLogsDemoActivity"/>
+        <activity android:name=".activity.ContactsActivity" />
+        <activity android:name=".activity.SelectAlbumActivity" />
+        <activity android:name=".activity.LooperActivity" />
+        <activity android:name=".activity.SelectCameraActivity" />
+        <activity
+            android:name=".activity.DialogThemeActivity"
+            android:theme="@style/Dialog.CustomBackgroundColor" />
+        <activity android:name=".activity.CustomViewListActivity" />
+        <activity android:name=".activity.CustomViewActivity" />
+        <activity android:name="com.example.lento.demotest.samsungdemo.activity.CallLogs" />
+        <activity android:name="com.example.lento.demotest.samsungdemo.activity.CallLogsDemoActivity" />
         <activity android:name=".activity.ParseHtmlActivity" />
         <activity android:name=".activity.DownloadActivity" />
         <activity android:name=".activity.GalleryViewPagerActivity" />
         <activity android:name=".activity.LocalHtmlActivity" />
+        <activity android:name=".activity.AddWidgetActivity" />
     </application>
 
 </manifest>

@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.example.lento.demotest.activity.AddWidgetActivity;
 import com.example.lento.demotest.activity.BaseActivity;
 import com.example.lento.demotest.activity.ContactsActivity;
 import com.example.lento.demotest.activity.CustomViewListActivity;
@@ -64,7 +65,8 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
             "install assets inner apk",
             "download",
             "GalleryViewPager",
-            "Local HTML"
+            "Local HTML",
+            "add widget"
     };
 
     @Override
@@ -188,7 +190,15 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
             case 14:
                 openLocalHtmlPage();
                 break;
+            case 15:
+                startAddWidgetActivity();
+                break;
         }
+    }
+
+    private void startAddWidgetActivity() {
+        Intent intent = new Intent(this, AddWidgetActivity.class);
+        startActivity(intent);
     }
 
     private void gotoS6() {
