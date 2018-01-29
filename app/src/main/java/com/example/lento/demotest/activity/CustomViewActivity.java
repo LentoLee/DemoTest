@@ -8,8 +8,10 @@ import android.view.View;
 
 import com.example.lento.demotest.views.DoubleCircleView;
 import com.example.lento.demotest.views.GranzortView;
+import com.example.lento.demotest.views.HeartView;
 import com.example.lento.demotest.views.LeafLoadingView;
 import com.example.lento.demotest.views.RectCircleView;
+import com.example.lento.demotest.views.RectDotView;
 
 /**
  * Created by lento on 2017/9/8.
@@ -22,6 +24,9 @@ public class CustomViewActivity extends BaseActivity {
     public static final String VIEW_RECT_CIRCLE = "RectCircleView";
     public static final String VIEW_LEAF_LOADING = "LeafLoadingView";
     public static final String VIEW_GRANZORT = "GranzortView";
+
+    public static final String VIEW_RECT_DOT = "RectDotView";
+    public static final String VIEW_HEART = "HeartView";
 
     public static void start(Context context, String viewName) {
         Intent intent = new Intent(context, CustomViewActivity.class);
@@ -53,6 +58,12 @@ public class CustomViewActivity extends BaseActivity {
                     break;
                 case VIEW_GRANZORT:
                     contentView = new GranzortView(this);
+                    break;
+                case VIEW_RECT_DOT:
+                    contentView = new RectDotView(this);
+                    break;
+                case VIEW_HEART:
+                    contentView = new HeartView(this);
                     break;
             }
             if (contentView != null) {

@@ -20,6 +20,8 @@ public class CustomViewListActivity extends BaseActivity implements SimpleAdapte
             CustomViewActivity.VIEW_RECT_CIRCLE,
             CustomViewActivity.VIEW_LEAF_LOADING,
             CustomViewActivity.VIEW_GRANZORT,
+            CustomViewActivity.VIEW_RECT_DOT,
+            CustomViewActivity.VIEW_HEART
     };
 
     @Override

@@ -22,6 +22,7 @@ import com.example.lento.demotest.activity.LooperActivity;
 import com.example.lento.demotest.activity.ParseHtmlActivity;
 import com.example.lento.demotest.activity.SelectAlbumActivity;
 import com.example.lento.demotest.activity.SelectCameraActivity;
+import com.example.lento.demotest.activity.ViewBase1Activity;
 import com.example.lento.demotest.adapter.SimpleAdapter;
 import com.example.lento.demotest.contact.ContactItem;
 import com.example.lento.demotest.contact.FavoriteContactLoader;
@@ -66,7 +67,8 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
             "download",
             "GalleryViewPager",
             "Local HTML",
-            "add widget"
+            "add widget",
+            "View Base 1"
     };
 
     @Override
@@ -193,7 +195,15 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
             case 15:
                 startAddWidgetActivity();
                 break;
+            case 16:
+                startViewBase1();
+                break;
         }
+    }
+
+    private void startViewBase1() {
+        Intent intent = new Intent(this, ViewBase1Activity.class);
+        startActivity(intent);
     }
 
     private void startAddWidgetActivity() {
