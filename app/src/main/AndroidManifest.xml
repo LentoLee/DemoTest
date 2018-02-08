@@ -44,7 +44,7 @@
         <activity android:name=".activity.GalleryViewPagerActivity" />
         <activity android:name=".activity.LocalHtmlActivity" />
         <activity android:name=".activity.AddWidgetActivity" />
-        <activity android:name=".activity.ViewBase1Activity" />
+        <activity android:name=".practisedraw.Practise1DrawActivity" />
     </application>
 
 </manifest>

@@ -22,10 +22,10 @@ import com.example.lento.demotest.activity.LooperActivity;
 import com.example.lento.demotest.activity.ParseHtmlActivity;
 import com.example.lento.demotest.activity.SelectAlbumActivity;
 import com.example.lento.demotest.activity.SelectCameraActivity;
-import com.example.lento.demotest.activity.ViewBase1Activity;
 import com.example.lento.demotest.adapter.SimpleAdapter;
 import com.example.lento.demotest.contact.ContactItem;
 import com.example.lento.demotest.contact.FavoriteContactLoader;
+import com.example.lento.demotest.practisedraw.Practise1DrawActivity;
 import com.example.lento.demotest.samsungdemo.activity.CallLogsDemoActivity;
 import com.example.lento.demotest.util.FirstCharChinese;
 import com.example.lento.demotest.util.SearchMatchRuleCompat;
@@ -41,7 +41,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -68,7 +67,7 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
             "GalleryViewPager",
             "Local HTML",
             "add widget",
-            "View Base 1"
+            "PractiseDraw1"
     };
 
     @Override
@@ -196,13 +195,13 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
                 startAddWidgetActivity();
                 break;
             case 16:
-                startViewBase1();
+                startPractise1Draw();
                 break;
         }
     }
 
-    private void startViewBase1() {
-        Intent intent = new Intent(this, ViewBase1Activity.class);
+    private void startPractise1Draw() {
+        Intent intent = new Intent(this, Practise1DrawActivity.class);
         startActivity(intent);
     }
 
