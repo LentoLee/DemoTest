@@ -10,8 +10,10 @@ import com.example.lento.demotest.views.DoubleCircleView;
 import com.example.lento.demotest.views.GranzortView;
 import com.example.lento.demotest.views.HeartView;
 import com.example.lento.demotest.views.LeafLoadingView;
+import com.example.lento.demotest.views.PathEffectView;
 import com.example.lento.demotest.views.RectCircleView;
 import com.example.lento.demotest.views.RectDotView;
+import com.example.lento.demotest.views.ShaderView;
 
 /**
  * Created by lento on 2017/9/8.
@@ -27,6 +29,8 @@ public class CustomViewActivity extends BaseActivity {
 
     public static final String VIEW_RECT_DOT = "RectDotView";
     public static final String VIEW_HEART = "HeartView";
+    public static final String VIEW_SHADER = "ShaderView";
+    public static final String VIEW_PATH_EFFECT = "PathEffectView";
 
     public static void start(Context context, String viewName) {
         Intent intent = new Intent(context, CustomViewActivity.class);
@@ -64,6 +68,12 @@ public class CustomViewActivity extends BaseActivity {
                     break;
                 case VIEW_HEART:
                     contentView = new HeartView(this);
+                    break;
+                case VIEW_SHADER:
+                    contentView = new ShaderView(this);
+                    break;
+                case VIEW_PATH_EFFECT:
+                    contentView = new PathEffectView(this);
                     break;
             }
             if (contentView != null) {
