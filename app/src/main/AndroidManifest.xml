@@ -45,6 +45,7 @@
         <activity android:name=".activity.LocalHtmlActivity" />
         <activity android:name=".activity.AddWidgetActivity" />
         <activity android:name=".practisedraw.Practise1DrawActivity" />
+        <activity android:name=".practisedraw.Practise2DrawActivity" />
     </application>
 
 </manifest>

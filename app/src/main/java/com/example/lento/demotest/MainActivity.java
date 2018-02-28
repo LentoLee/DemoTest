@@ -26,6 +26,7 @@ import com.example.lento.demotest.adapter.SimpleAdapter;
 import com.example.lento.demotest.contact.ContactItem;
 import com.example.lento.demotest.contact.FavoriteContactLoader;
 import com.example.lento.demotest.practisedraw.Practise1DrawActivity;
+import com.example.lento.demotest.practisedraw.Practise2DrawActivity;
 import com.example.lento.demotest.samsungdemo.activity.CallLogsDemoActivity;
 import com.example.lento.demotest.util.FirstCharChinese;
 import com.example.lento.demotest.util.SearchMatchRuleCompat;
@@ -67,7 +68,8 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
             "GalleryViewPager",
             "Local HTML",
             "add widget",
-            "PractiseDraw1"
+            "PractiseDraw1",
+            "PractiseDraw2"
     };
 
     @Override
@@ -197,11 +199,18 @@ public class MainActivity extends BaseActivity implements SimpleAdapter.OnItemCl
             case 16:
                 startPractise1Draw();
                 break;
+            case 17:
+                startPractise2Draw();
+                break;
         }
     }
 
     private void startPractise1Draw() {
         Intent intent = new Intent(this, Practise1DrawActivity.class);
+        startActivity(intent);
+    }
+    private void startPractise2Draw() {
+        Intent intent = new Intent(this, Practise2DrawActivity.class);
         startActivity(intent);
     }
 
