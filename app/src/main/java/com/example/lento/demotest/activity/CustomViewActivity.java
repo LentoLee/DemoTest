@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
+import com.example.lento.demotest.views.ClipView;
 import com.example.lento.demotest.views.DoubleCircleView;
 import com.example.lento.demotest.views.GranzortView;
 import com.example.lento.demotest.views.HeartView;
@@ -31,6 +32,7 @@ public class CustomViewActivity extends BaseActivity {
     public static final String VIEW_HEART = "HeartView";
     public static final String VIEW_SHADER = "ShaderView";
     public static final String VIEW_PATH_EFFECT = "PathEffectView";
+    public static final String VIEW_CLIP = "ClipView";
 
     public static void start(Context context, String viewName) {
         Intent intent = new Intent(context, CustomViewActivity.class);
@@ -74,6 +76,9 @@ public class CustomViewActivity extends BaseActivity {
                     break;
                 case VIEW_PATH_EFFECT:
                     contentView = new PathEffectView(this);
+                    break;
+                case VIEW_CLIP:
+                    contentView = new ClipView(this);
                     break;
             }
             if (contentView != null) {

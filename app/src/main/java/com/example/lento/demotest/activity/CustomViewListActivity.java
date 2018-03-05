@@ -23,7 +23,8 @@ public class CustomViewListActivity extends BaseActivity implements SimpleAdapte
             CustomViewActivity.VIEW_RECT_DOT,
             CustomViewActivity.VIEW_HEART,
             CustomViewActivity.VIEW_SHADER,
-            CustomViewActivity.VIEW_PATH_EFFECT
+            CustomViewActivity.VIEW_PATH_EFFECT,
+            CustomViewActivity.VIEW_CLIP,
     };
 
     @Override
